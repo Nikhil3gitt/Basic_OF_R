@@ -1,0 +1,184 @@
+```{r}
+#install.packages("dplyr")
+
+library(dplyr)
+bins <- 3
+df <- tibble(x = c(1, 2, 3, 4, 5, 6, 7))
+df <- mutate(df, bin = ntile(x, bins))
+```
+
+## vector
+
+```{r}
+#To check data class of any data type we can use "class" function 
+vec1 <- c(1,"564","b","c")
+class(vec1)
+
+
+#Vector is only represents homogenious vdata type 
+
+vec1 <- c(12,13,14)
+
+vec2 <- c(1,T,2,F) #OUt ->  1,1,2,0
+
+vec3 <- c(1,2,"d","dhf") #OUt ->  "1"   "2"   "d"   "dhf"
+
+vec4 <- c(1,2,"d",T) #OUt ->  "1"   "2"   "d"   "TRUE"
+
+vec4
+
+
+# indices starts from 1 in the R Language
+
+vec1[1]  # Out -> 12
+```
+
+## List
+
+List is used to represents multiple data type & and data type remain unchanged
+
+```{r}
+l1 = list(1,"ab", F)
+l1
+```
+
+## Matrix
+
+Matrix is used stored multi-directional vectors.
+
+```{r}
+m1 <- matrix(c(1,2,3,4,5,7,6,8))
+#m1
+
+m2 <- matrix(c(1,2,3,4,5,7,6,8), nrow=4, ncol=2)
+#m2
+
+# if we want to print data row wise then we use "byrow" function 
+m3 <- matrix(c(1,2,3,4,5,7,6,8), nrow=4, ncol=2, byrow = T)
+m3
+```
+
+## Array
+
+more then 2D data type
+
+```{r}
+v1 <- c(1:5)
+v2 <- c(89:96)
+
+a1 <- array(c(v1,v2), dim = c(2,3,3))
+a1
+a1[,2,2]
+```
+
+## Factor
+
+Factor is often uses to change categorical data type to alphabetical order
+
+```{r}
+color1 <- c("Yellow","red", "green")
+as.factor(color1) -> color1
+
+color1
+
+```
+
+```{r}
+fruits <- data.frame(fruits_name = c("apple", "banana", "Guava"), fruits_cost = c(5, 8, 10))
+
+fruits
+
+fruits$fruits_name[2
+                   ]
+```
+
+## Inbuild Functin
+
+I have loaded the Iris dataset
+
+```{r}
+# to view data set
+# View(iris)
+
+#to check stucture of data frame 
+str(iris)
+
+# to get top results 
+#head(iris,10)
+
+# to get bottom results 
+#tail(iris,3)
+```
+
+**Table function is used for categorical data to count heir frequency**
+
+```{r}
+table(iris$Species)
+```
+
+**Algebraic function**
+
+```{r}
+min(iris$Sepal.Length)
+
+max(iris$Sepal.Length)
+
+mean(iris$Sepal.Length)
+
+median(iris$Sepal.Length)
+
+range(iris$Sepal.Length)
+```
+
+## IF ELSE
+
+```{r}
+# Example variable
+score <- 85
+
+# If-else-if-else statement
+if (score >= 90) {
+  print("A")
+} else if (score >= 80) {
+  print("B")
+} else if (score >= 70) {
+  print("C")
+} else {
+  print("D")
+}
+
+```
+
+## loops
+
+```{r}
+# For loop example
+for (i in 1:3) {
+  print(i)
+}
+
+# While loop example
+count <- 1
+while (count <= 15) {
+  print(count)
+  count <- count*2 + 1
+}
+
+```
+
+## Function
+
+```{r}
+gst13 <-function(x){
+  x<-x*1.13
+  x
+}
+
+gst13 (140)
+```
+
+# important links
+
+[Youtube- data pre-processing](https://www.youtube.com/playlist?list=PLhCoH0dN4ABfsTZlcogIuozaW28HrMWHU)
+
+[Youtube- R Language basics](https://youtube.com/watch?v=SBhpLnPuNlI&t=4797s)
